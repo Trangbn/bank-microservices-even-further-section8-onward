@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+cards:
+  message: "Welcome to Cards services PROD"
+  cardsContactInfo:
+    name: "John Doe PROD"
+    email: "johnprod@gmail.com"
+  onCallSupport:
+    - (555) 0212 2698
+    - (555) 0132 2698

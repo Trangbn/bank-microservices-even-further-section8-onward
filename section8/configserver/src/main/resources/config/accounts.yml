@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to Accounts services default"
+  accountsContactInfo:
+    name: "John Doe"
+    email: "john@gmail.com"
+  onCallSupport:
+    - (555) 0112 2563
+    - (555) 0112 2588

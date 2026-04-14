@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/Trangbn/ezmicroservice-config.git"
+          default-label: master
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+#        native:
+#          search-locations: "classpath:/config"
+#          search-locations: "file:///home//vmo//Documents//projects//springboot-microservices//bank-microservices//configserver//src//main//resources//config"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+encrypt:
+  key: "h8ydeUBbN7tNKfv5C6TpibQA"
+
+server:
+  port: 8071
