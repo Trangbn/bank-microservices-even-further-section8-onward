@@ -26,3 +26,12 @@ management:
     web:
       exposure:
         include: "*"
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8070/eureka/
