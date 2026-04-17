@@ -19,13 +19,19 @@ spring:
       ddl-auto: update
     show-sql: true
   config:
-    import: "optional:configserver:http://configserver:8071/"
+    import: "optional:configserver:http://localhost:8071/"
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
 
 eureka:
   instance:
@@ -35,3 +41,9 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8070/eureka/
+
+info:
+  app:
+    name: "accounts"
+    version: "0.0.1"
+    description: "Accounts applications"

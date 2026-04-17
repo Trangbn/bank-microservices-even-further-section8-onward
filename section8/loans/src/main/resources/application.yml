@@ -20,10 +20,31 @@ spring:
     show-sql: true
 
   config:
-    import: "optional:configserver:http://configserver:8071/"
+    import: "optional:configserver:http://localhost:8071/"
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
+
+info:
+  env:
+    description: "Loan applications"
+    name: "loans"
+    version: "0.0.1"
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8070/eureka/
