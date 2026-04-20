@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class CardsController {
 
-    private ICardsService cardsService;
+    private final ICardsService cardsService;
+
+    public CardsController(ICardsService cardsService) {
+        this.cardsService = cardsService;
+    }
 
     @Value("${build.version}")
     private String buildVersion;
@@ -30,7 +34,7 @@ public class CardsController {
     }
 
     @GetMapping("/fetch")
-    public ResponseEntity<CardsDto> fetchCards(@RequestParam("mobileNumber") String mobileNumber) {
+    public ResponseEntity<CardsDto> fetchCardDetails(@RequestParam("mobileNumber") String mobileNumber) {
         CardsDto foundCard = cardsService.findByMobileNumber(mobileNumber);
         if (foundCard == null) {
             throw new RuntimeException("Card not found");

@@ -19,7 +19,11 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class LoansController {
 
-    private ILoanService loanService;
+    private final ILoanService loanService;
+
+    public LoansController(ILoanService loanService) {
+        this.loanService = loanService;
+    }
 
     @Value("${build.version}")
     private String buildVersion;
@@ -28,7 +32,7 @@ public class LoansController {
     private LoansContactInfoDto loansContactInfoDto;
 
     @GetMapping("/fetch")
-    public ResponseEntity<LoanDto> findByMobileNumber(@RequestParam String mobileNumber){
+    public ResponseEntity<LoanDto> fetchLoanDetails(@RequestParam String mobileNumber){
         LoanDto byMobileNumber = loanService.findByMobileNumber(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(byMobileNumber);
     }
