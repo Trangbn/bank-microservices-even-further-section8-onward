@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to Accounts services PROD"
+  accountsContactInfo:
+    name: "John Doe prod"
+    email: "johnprod@gmail.com"
+  onCallSupport:
+    - (555) 0112 2598
+    - (555) 0112 2598

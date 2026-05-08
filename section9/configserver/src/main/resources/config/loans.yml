@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+loans:
+  message: "Welcome to Loans services default"
+  loansInfo:
+    name: "John Doe"
+    email: "johnloans@gmail.com"
+  onCallSupport:
+    - (555) 0219 2698
+    - (555) 0139 2698

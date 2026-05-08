@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+loans:
+  message: "Welcome to Loans services QA"
+  loansInfo:
+    name: "John Doe QA"
+    email: "johnqa@gmail.com"
+  onCallSupport:
+    - (555) 0229 2698
+    - (555) 0139 2698

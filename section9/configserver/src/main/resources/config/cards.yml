@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+cards:
+  message: "Welcome to Cards services default"
+  cardsContactInfo:
+    name: "John Doe Cards"
+    email: "johncards@gmail.com"
+  onCallSupport:
+    - (555) 0212 2598
+    - (555) 0132 2598

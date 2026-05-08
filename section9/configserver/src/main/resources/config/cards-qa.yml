@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+cards:
+  message: "Welcome to Cards services QA"
+  cardsContactInfo:
+    name: "John Doe QA"
+    email: "johnqa@gmail.com"
+  onCallSupport:
+    - (555) 0218 2698
+    - (555) 0138 2698
